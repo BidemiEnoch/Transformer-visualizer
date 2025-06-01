@@ -1,0 +1,9 @@
+.vector{
+    background-color: #111;
+    padding: 1px;
+    border-radius: 4px;
+}
+
+.vector-item{
+    padding: 3px 8px;
+}

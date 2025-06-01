@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Visualizer</title>
+  <link href="/styles/main.css" rel="stylesheet" type="text/css" />
+  <link href="/styles/vector.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div id="container">
+    <div id="header">Transformer Visualizer</div>
+    <div id="input">
+      <form action="/submit" method="post">
+        <input type="text" name="text" placeholder="Enter your text here" required minlength="3" />
+        <button type="submit"> Enter </button>
+      </form>
+    </div>
+    <div class="field">
+      <div class="group-banner">Embedding layer</div>
+      <div class="group-content">
+        <%segments.forEach(item=>{%>
+        <div class="input-row">
+          <div class="input-row-item">
+            <span class="segments" style="<%=item[1]%>">
+              <%= item[0] %>
+            </span>
+          </div>
+          <div class="input-row-item-header">w</div>
+          <div class="input-row-item">
+            <%- include('./components/vector') %>
+          </div>
+          <div class="input-row-item-header">p</div>
+          <div class="input-row-item">
+            <%- include('./components/vector') %>
+          </div>
+          <div class="input-row-item-header">f</div>
+          <div class="input-row-item">
+            <%- include('./components/vector') %>
+          </div>
+        </div>
+
+        <%});%>
+      </div>
+
+      <div class="group-footer">
+        <div><span>w</span> represents a word embedding</div>
+        <div><span>p</span> represents a positional embedding</div>
+        <div><span>f</span> represents a final embedding</div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
