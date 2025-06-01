@@ -10,6 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "src")));
 
 const PORT = 3000;
+const FLASK_SERVER = "http://127.0.0.1:5000/flask";
 
 app.get('/', (req, res) => {
     res.render("home");
@@ -19,13 +20,12 @@ app.post('/submit', async (req, res) => {
     const data = req.body;
     res.render("home");
     try{
-        const response = await axios.post("http://127.0.0.1:5000/flask", data);
+        const response = await axios.post(FLASK_SERVER, data);
         console.log(response.data);
     }
     catch(err){
         console.log(err);
     }
-    //const axios.post("http://127.0.0.1:5000/flask", data);
 });
 
 app.listen(PORT, () => {
