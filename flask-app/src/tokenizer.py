@@ -1,16 +1,14 @@
 from transformers import AutoTokenizer, AutoModel
 import torch
 
-
 model_name = "google-bert/bert-base-uncased"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModel.from_pretrained(model_name)
 
-
 def tokenize(text: str) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
     token = tokenizer([text], return_tensors="pt")["input_ids"]
 
-    # Raw tensor from the embedding layer
+    # Raw tensor from the embedding layerß
     word_embeddings = model.embeddings.word_embeddings(token)
 
     # Generate position IDs
@@ -26,4 +24,3 @@ def tokenize(text: str) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
     return (word_embeddings, positional_embeddings, final_embeddings)
 
 
-# print(tokenize("the sun is"))
