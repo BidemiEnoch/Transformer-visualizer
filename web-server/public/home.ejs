@@ -17,7 +17,7 @@
       </form>
     </div>
     <div class="field">
-      <div class="group-banner">Embedding layer</div>
+      <div class="group-banner">Word embedding [6x700]</div>
       <div class="group-content">
         <%segments.forEach(item=>{%>
         <div class="input-row">
@@ -26,15 +26,6 @@
               <%= item[0] %>
             </span>
           </div>
-          <div class="input-row-item-header">w</div>
-          <div class="input-row-item">
-            <%- include('./components/vector') %>
-          </div>
-          <div class="input-row-item-header">p</div>
-          <div class="input-row-item">
-            <%- include('./components/vector') %>
-          </div>
-          <div class="input-row-item-header">f</div>
           <div class="input-row-item">
             <%- include('./components/vector') %>
           </div>
@@ -42,14 +33,63 @@
 
         <%});%>
       </div>
+    </div>
+    <div class="field">
+      <div class="group-banner">Positional embedding [6x700]</div>
+      <div class="group-content">
+        <%segments.forEach(item=>{%>
+        <div class="input-row">
+          <div class="input-row-item">
+            <span class="segments" style="<%=item[1]%>">
+              <%= item[0] %>
+            </span>
+          </div>
+          <div class="input-row-item">
+            <%- include('./components/vector') %>
+          </div>
+        </div>
 
-      <div class="group-footer">
-        <div><span>w</span> represents a word embedding</div>
-        <div><span>p</span> represents a positional embedding</div>
-        <div><span>f</span> represents a final embedding</div>
+        <%});%>
       </div>
     </div>
+    <div class="field">
+      <div class="group-banner">Final embedding [6x700]
+        <div>= word + positional embedding</div>
+      </div>
 
+      <div class="group-content">
+        <%segments.forEach(item=>{%>
+        <div class="input-row">
+          <div class="input-row-item">
+            <span class="segments" style="<%=item[1]%>">
+              <%= item[0] %>
+            </span>
+          </div>
+          <div class="input-row-item">
+            <%- include('./components/vector') %>
+          </div>
+        </div>
+
+        <%});%>
+      </div>
+    </div>
+    <div class="field">
+      <div class="group-banner">Attention scores</div>
+      <div>
+        <table>
+          <tr>
+            <th>a</th>
+            <th>b</th>
+            <th>c</th>
+          </tr>
+          <tr>
+            <td>a</th>
+            <td>b</th>
+            <td>c</th>
+          </tr>
+        </table>
+      </div>
+    </div>
   </div>
 </body>
 

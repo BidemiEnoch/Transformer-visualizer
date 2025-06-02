@@ -51,16 +51,6 @@ button {
     font-size: 26px;
 }
 
-.group-footer>div{
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding: 3px;
-}
-
-.group-footer>div>span{
-   color:green;
-}
-
 .segments{
     margin:2px 9px 2px 9px;
     padding: 2px 4px 2px 4px;
@@ -74,11 +64,8 @@ button {
 
 .input-row-item{
     display: block;
+    
 }
 
-.input-row-item-header{
-    margin-bottom:0px;
-    padding-bottom: 0px;
-    color:green;
-}
+
 
