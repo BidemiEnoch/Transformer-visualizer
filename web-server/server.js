@@ -24,8 +24,8 @@ app.post('/submit', async (req, res) => {
 
     res.render("home", { segments });
     try {
-        //const response = await axios.post(FLASK_SERVER, data);
-        //console.log(response.data);
+        const response = await axios.post(FLASK_SERVER, data);
+        console.log(response.data);
 
         console.log(data);
     }
