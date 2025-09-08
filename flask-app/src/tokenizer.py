@@ -20,7 +20,6 @@ def tokenize(text: str) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
 
     # The final position encoded embeddings
     final_embeddings = word_embeddings + positional_embeddings
-
     return (word_embeddings, positional_embeddings, final_embeddings)
 
 

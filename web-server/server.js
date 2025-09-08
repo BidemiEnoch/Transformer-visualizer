@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 const PORT = 3000;
 
-const dummy_input = ["<bos>","it", "is", "all", "exagerrated","<eos>"];
+const dummy_input = ["<bos>","it", "is", "not", "exagerrated","<eos>"];
 const segments = util.getTokenColors(dummy_input);
 
 
