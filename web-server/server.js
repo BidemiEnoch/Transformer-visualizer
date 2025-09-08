@@ -27,7 +27,6 @@ app.post('/submit', async (req, res) => {
     try {
         const response = await axios.post(FLASK_SERVER, data);
         console.log(response.data);
-
         console.log(data);
     }
     catch (err) {
