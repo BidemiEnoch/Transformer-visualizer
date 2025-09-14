@@ -7,7 +7,6 @@ model = AutoModel.from_pretrained(model_name)
 
 def tokenize(text: str) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
     token = tokenizer([text], return_tensors="pt")["input_ids"]
-
     # Raw tensor from the embedding layerß
     word_embeddings = model.embeddings.word_embeddings(token)
 
