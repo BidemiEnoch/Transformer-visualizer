@@ -15,6 +15,7 @@ const PORT = 3000;
 const dummy_input = ["<bos>","it", "is", "not", "exagerrated","<eos>"];
 const segments = util.getTokenColors(dummy_input);
 
+
 app.get('/', (req, res) => {
     res.render("home", { segments });
 });
